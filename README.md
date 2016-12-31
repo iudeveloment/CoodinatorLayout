@@ -66,25 +66,25 @@ dependencies {
 
 ## Motion
 * ``CoordinatorLayout``    
-  CoordinatorLayout은 ``Behavior`` 를 통해 Child View 간 Touch Event에 대한 추가 수준의 제어 지원  
+  ``CoordinatorLayout``은 ``Behavior`` 를 통해 Child View 간 Touch Event에 대한 추가 수준의 제어 지원  
   ![](http://dl.dropbox.com/s/cxzmam9kedrvpiz/CoordinatorLayout.gif)
 
 * ``AppBarLayout``    
-  Toolbar, 기타 View가 ``ScrollingViewBehavior``로 표시된 형제 View에서 일어난 Scroll Event로 반응하도록 설계
+  ``Toolbar``, 기타 View가 ``ScrollingViewBehavior``로 표시된 형제 View의 Scroll Event로 반응하도록 설계
 
 * ``CollapsingToolbarLayout``  
   Text Size, pinning and parallax  
-  확장된 높이의 Toolbar를 접으면 Title Size 조정 가능.  
-  접을 수 있는 Toobar 위로 항목을 고정시키거나, 변화하는 이미지를 넣거나, 접히면 원색 표현 가능.  
+  확장된 높이의 ``Toolbar``를 접으면 Title Size 조정 가능.  
+  접을 수 있는 ``Toobar`` 위로 항목을 고정시키거나, 변화하는 이미지를 넣거나, 접히면 원색 표현 가능.  
   ![](http://dl.dropbox.com/s/dm06h63oj14wh4k/CollapsingToolbarLayout.gif)
 
 -----
 
 # Material Design Motion ``CoordinatorLayout``
-CoordinatorLayout은 Super-Powered FrameLayout with **Coordinator Motion**    
-초기 AppBar가 Main Content의 Scroll 반응과 연동되는 것을 목적으로 출시.
+``CoordinatorLayout``은 Super-Powered FrameLayout with **Coordinator Motion**    
+초기 ``AppBar``가 Main Content의 Scroll 반응과 연동되는 것을 목적으로 출시.
 
-CoordinatorLayout은 다음과 같은 두 가지 주요 사례를 대상으로 한다.
+``CoordinatorLayout``은 다음과 같은 두 가지 주요 사례를 대상으로 한다.
 
 1. 최상위 레벨 어플리케이션 데코레이션 또는 크롬 레이아웃
 2. 하나 이상의 Child View와 특정 상호 작용을 위한 Container
@@ -99,7 +99,7 @@ CoordinatorLayout은 다음과 같은 두 가지 주요 사례를 대상으로 �
 # ``CoordinatorLayout``'s XML Attribute
 
 ## Scrolling Technique ``app:layout_scrollFlags``
-CoordinatorLayout의 또 다른 주요한 사례로 **AppBar(Toolbar) Scrolling** 기능이 있다.   
+``CoordinatorLayout``의 또 다른 주요한 사례로 **AppBar(Toolbar) Scrolling** 기능이 있다.   
 Design Library는 이 기능을 한 단계 더 발전시켰다.
 
 ``AppBarLayout`` 으로 ``Toolbar``와 기타 View가 ``ScrollingViewBehavior``로 표시된   
@@ -154,15 +154,15 @@ Scroll Flag를 사용하는 모든 View는 이 Flag를 사용하지 않는 View 
 
 ## ``Behavior``
 **``CoordinatorLayout``의 Child View에 대한 ``Behavior`` 지정으로 단일 Parent, View 간 다양한 상호 작용 가능.**  
-Behavior를 사용하면 Drawer 및 Panel을 밀어 넣는 것과 이동 가능하고 Amimation으로 움직이면,    
+``Behavior``를 사용하면 Drawer 및 Panel을 밀어 넣는 것과 이동 가능하고 Amimation으로 움직이면,    
 다른 View 요소에 달라 붙는 스와이프 기능까지 다양한 상호 작용 및 추가 레이아웃 수정을 구현할 수 있다.
 
 ``Coordinator.Behavior`` 추가 API 지원으로 하위 View가 Touch Event. Gesture를 Control 가능하고       
 서로 간의 Dependency를 선언하고 ``onDependentViewChanged()`` Method로 Callback 받을 수 있다.   
 
-View가 기본 동작을 선언하려면 ``@CoordinatorLayout.DefaultBehavior(YourView.Behavior.class)`` 또는
+View가 기본 동작을 선언하려면 ``@CoordinatorLayout.DefaultBehavior(YourView.Behavior.class)``,
 ``app:layout_behavior="com.example.app.YourView$Behavior"`` 특성으로 XML Layout 파일에 설정.   
-이 프레임워크로 어느 View라도 CoordinatorLayout과 통합 가능.
+이 프레임워크로 어느 View라도 ``CoordinatorLayout``과 통합 가능.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -215,26 +215,26 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 #### ``NestedScrollView``
-``NestedScrollView``의 ``layout_behavior``는 ``AppBarLayout$ScrollingViewBehavior`` 가 미리 정의됨.      
+``NestedScrollView``의 ``layout_behavior``는 ``AppBarLayout$ScrollingViewBehavior``가 미리 정의됨.      
 ``NestedScrollView``의 반응에 따라 ``AppBarLayout``이 반응.  
 
 ``CoordinatorLayout``는 ``NestedScrollView``가 Scroll 되면 ``layout_behavior``로 정의된 레이아웃으로   
-Scroll 정보를 전달 하는 역할. 그럼 ``AppBarLayout``의 ``ScrollingViewBehavior`` 정보로 ``AppBarLayout`` 자신을   
-변형하도록 하는 구조.
+Scroll 정보를 전달 하는 역할. 그럼 ``AppBarLayout``의 ``ScrollingViewBehavior`` 정보로 ``AppBarLayout``   
+자신을 변형하도록 하는 구조.
 
-CoordinatorLayout이 Scroll 되는 것은 Behavior에 구현된 **NestedScrollingParent** 로 전달.     
-CoordinatorLayout는 NestedScrollingParent가 구현되어 있으며, Scroll 되는 View들은   
-NestedScrollingChild가 구현되어 있어야 Behavior가 전달.   
+``CoordinatorLayout``이 Scroll 되는 것은 ``Behavior``에 구현된 **``NestedScrollingParent``** 로 전달.     
+``CoordinatorLayout``는 ``NestedScrollingParent``가 구현되어 있으며, Scroll 되는 View들은   
+``NestedScrollingChild``가 구현되어 있어야 ``Behavior``가 전달.   
 
 ## ``Anchor``
 **특정 View의 ``Anchor``를 달아 고정하고 함께 이동함.**  
 ``Anchor``를 고정하는 위치 및 기준 지정 가능.
 
-sss
+-----
 
 # Let's Coding
 
-## 1. Add activity_main.xml's Top-Level View ``CoordinatorLayout``
+## 1. Add ``activity_main.xml`` Top-Level View ``CoordinatorLayout``
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -335,4 +335,4 @@ sss
        android:layout_height="match_parent"
        android:id="@+id/recycler"
        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-  ```
+```
