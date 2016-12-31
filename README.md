@@ -99,14 +99,14 @@ Design Library는 이 기능을 한 단계 더 발전시켰다.
 **AppBarLayout** 으로 Toolbar와 기타 View가 ScrollingViewBehavior로 표시된 형제 View에서 일어난 Scroll Event에  
 반응하도록 할 수 있다.
 
-Flag                | Description
---------------------|--------------------------------------------------------------------------------
-scroll              |**UI 화면 밖으로 Scroll로 내보내고자 하는 모든 View에 반드시 설정**
-                    |이 Flag를 사용하지 않는 View는 UI 화면 가장 위에 고정된 상태로 유지
-enterAlways         |아래쪽 방향으로 Scroll 시, 항상 이 View가 표시되며 'Quick Return' Pattern 활성화
-enterAlwaysCollapsed|View가 minHeight를 선언한 경우, View가 최소 높이로만 진입하게 되고('축소됨')
-                    |Scrolling View가 가장 위로 도달했을 때만 전체 높이로 다시 확장
-exitUntilCollapsed  |View가 '축소됨'(minHeight) 크기로 도달 시까지 밖으로 Scroll 되다가 종료
+Flag                | Description                                                                    |
+--------------------|--------------------------------------------------------------------------------|
+scroll              |**UI 화면 밖으로 Scroll로 내보내고자 하는 모든 View에 반드시 설정**  
+                    |이 Flag를 사용하지 않는 View는 UI 화면 가장 위에 고정된 상태로 유지  
+enterAlways         |아래쪽 방향으로 Scroll 시, 항상 이 View가 표시되며 'Quick Return' Pattern 활성화  
+enterAlwaysCollapsed|View가 minHeight를 선언한 경우, View가 최소 높이로만 진입하게 되고('축소됨')  
+                    |Scrolling View가 가장 위로 도달했을 때만 전체 높이로 다시 확장  
+exitUntilCollapsed  |View가 '축소됨'(minHeight) 크기로 도달 시까지 밖으로 Scroll 되다가 종료  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
